@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] About plotting geometry of a molecule for a DX	learner
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2013-March/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20About%20plotting%20geometry%20of%20a%20molecule%20for%20a%20DX%0A%09learner&In-Reply-To=%3C003001ce211a%24d95b7900%248c126b00%24%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] About plotting geometry of a molecule for a DX	learner</H1>
+    <B>Yonghui</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20About%20plotting%20geometry%20of%20a%20molecule%20for%20a%20DX%0A%09learner&In-Reply-To=%3C003001ce211a%24d95b7900%248c126b00%24%40gmail.com%3E"
+       TITLE="[OpenDX2-users] About plotting geometry of a molecule for a DX	learner">lyh03259.aps at gmail.com
+       </A><BR>
+    <I>Fri Mar 15 02:17:20 CET 2013</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#64">[ date ]</a>
+              <a href="thread.html#64">[ thread ]</a>
+              <a href="subject.html#64">[ subject ]</a>
+              <a href="author.html#64">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear DX/DX2 users,
+
+ 
+
+I am learning OpenDX. I have a general understanding of DX and I can write a
+net file for plotting 3D isosurfaces, but I am not a pro.
+
+My question is:
+
+Giving a position file and a general file as a description, how can I plot a
+ball-stick structure for a molecule within the modules/macros provided by
+DX?
+
+For example:
+
+I have a geo.xyz file and a general file like these:
+
+-----------------------------------Geo.xyz----------------------------------
+---------
+
+46
+
+TDPP geo
+
+          C       -7.144175   -0.953942    0.162885
+
+          C       -5.848447   -1.408507   -0.116238
+
+          C       -4.862029   -0.424485   -0.265522
+
+.
+
+----------------------------------------------------------------------------
+---------------
+
+----------------------------------Geo.general-------------------------------
+-----------
+
+file = geo.xyz
+
+points = 46
+
+format = ascii
+
+interleaving = field
+
+header = lines 2
+
+field = field0, locations
+
+structure = string[15], 3-vector
+
+type = string, float
+
+ 
+
+end
+
+----------------------------------------------------------------------------
+----------------
+
+My net file looks like this: FileSelector-&gt;Import-&gt;AutoGlyph-&gt;Image. After
+executing, I got a picture with white letter on the right positions.
+
+But I am wondering how to make it a ball-Stick structure. To bring the
+problem down, there are three sub questions:
+
+1.       How can I tell DX to plot a sphere at the all the positions of
+carbon, and not simply write a &quot;C&quot; on the point?
+
+2.       How can I tell DX to calculate the distance between any two atoms?
+
+3.       For distances smaller than a specific number, how can I tell DX to
+connect the corresponding atoms with a line?
+
+Any suggestion will be appreciated. I just don't know which module should be
+used. And I think maybe a little hint will be great!
+
+Thanks.
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/opendx2-users/attachments/20130314/fe72101e/attachment.html">https://lists.berlios.de/pipermail/opendx2-users/attachments/20130314/fe72101e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#64">[ date ]</a>
+              <a href="thread.html#64">[ thread ]</a>
+              <a href="subject.html#64">[ subject ]</a>
+              <a href="author.html#64">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

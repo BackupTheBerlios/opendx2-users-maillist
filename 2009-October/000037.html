@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] first try - opendx and plotting angular dependent data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%0A%20dependent%20data&In-Reply-To=%3C4ADBE9D3.5050406%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000036.html">
+   <LINK REL="Next"  HREF="000038.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] first try - opendx and plotting angular dependent data</H1>
+    <B>Lars O. Grobe</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%0A%20dependent%20data&In-Reply-To=%3C4ADBE9D3.5050406%40gmx.net%3E"
+       TITLE="[OpenDX2-users] first try - opendx and plotting angular dependent data">grobe at gmx.net
+       </A><BR>
+    <I>Mon Oct 19 06:23:47 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000036.html">[OpenDX2-users] first try - opendx and plotting angular dependent	data
+</A></li>
+        <LI>Next message: <A HREF="000038.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#37">[ date ]</a>
+              <a href="thread.html#37">[ thread ]</a>
+              <a href="subject.html#37">[ subject ]</a>
+              <a href="author.html#37">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear all,
+
+I have partially achieved what I wanted to do by trial and error. 
+However, there are some points where I obviously got stuck:
+
+&gt;<i> My first question - is this correct so far? The result somehow looks 
+</I>&gt;<i> like what I expected though a bit spikey, but that MAY be because of my 
+</I>&gt;<i> data, What I would like to have now in a second step is
+</I>&gt;<i>   
+</I>I found that there is the Post module which is supposed to do some 
+interpolation. I just do not know how to use it - where in my net should 
+it appear, just after the Connect module?
+
+&gt;<i> b) I would like to find out how to smooth the z-values
+</I>&gt;<i>   
+</I>See above...
+
+&gt;<i> c) I would like to plot both, the theta 0-90 and 90-180, into two plots 
+</I>&gt;<i> in the same presentation. Is collect the way to do so, after 
+</I>&gt;<i> transforming the plots?
+</I>&gt;<i>   
+</I>I achieved this by translating one plot.
+
+&gt;<i> After that, I would like to try an alternative way to plot the data, 
+</I>&gt;<i> this time for theta 0-180 in one. To do so, I would create a sphere with 
+</I>&gt;<i> the data value being used as radius. How can I get this? I would have to 
+</I>&gt;<i> access both position and data information from within one compute 
+</I>&gt;<i> module. I understand that I have two inputs, so I could connect the 
+</I>&gt;<i> first to the marked positions and the second to the unmarked data. The 
+</I>&gt;<i> positions would be a.0 (theta) and a.1(phi), but I could not get this 
+</I>&gt;<i> when I tried to refer to the second input as b.0 - what is wrong?
+</I>&gt;<i>   
+</I>This is where I am completely lost now. I tried to use the positions 
+(a.x, a.y) and the data value (b) with a compute module, to get (x,y,z). 
+However, as a is a field with two scalars, while b contains only one 
+data value, I get an error (&quot;Bad paramater: Inputs must be of same 
+length / Input 1 not matching the master (input 0).&quot;). So I tried to 
+change my input b by passing it through a second compute module, which 
+was simply to add the second scalar: [(a),(0)] - but this did not work, 
+same error message. So how do I match the two inputs, to be able to 
+modify the position by the data value?
+
+Thank you, regards
+
+Lars O. Grobe.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000036.html">[OpenDX2-users] first try - opendx and plotting angular dependent	data
+</A></li>
+	<LI>Next message: <A HREF="000038.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#37">[ date ]</a>
+              <a href="thread.html#37">[ thread ]</a>
+              <a href="subject.html#37">[ subject ]</a>
+              <a href="author.html#37">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

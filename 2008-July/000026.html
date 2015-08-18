@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] Can DX count from 1 instead of 0?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Can%20DX%20count%20from%201%20instead%20of%200%3F&In-Reply-To=%3Cb1aa7bb20807161430g45a04dacq615c2d44f852d454%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000025.html">
+   <LINK REL="Next"  HREF="000027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] Can DX count from 1 instead of 0?</H1>
+    <B>Mark Gesing</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Can%20DX%20count%20from%201%20instead%20of%200%3F&In-Reply-To=%3Cb1aa7bb20807161430g45a04dacq615c2d44f852d454%40mail.gmail.com%3E"
+       TITLE="[OpenDX2-users] Can DX count from 1 instead of 0?">magesing at engmail.uwaterloo.ca
+       </A><BR>
+    <I>Wed Jul 16 23:30:12 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000025.html">[OpenDX2-users] Problems running DX version 4.4.4 in script mode
+</A></li>
+        <LI>Next message: <A HREF="000027.html">[OpenDX2-users] Can DX count from 1 instead of 0?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I have some data which is on a grid of cube shaped volume elements.
+The grid is an 8x8 grid (64 elements), made-up of two layers of nodes
+(9x9x2=162).
+
+My problem is that DX by default numbers the nodes starting at 0-161,
+whereas the application generating the data (LS-Dyna) numbers the nodes
+1-162.
+
+Therefore when I try to import the data (following the example on page 254
+of the user's guide) I get the error:
+
+Begin Execution
+ERROR: Import:  Invalid data: 573rd item in `connections' component (162) is
+not between 0 and 161  / file 'd3plot.dx' line 14
+
+My .dx file &quot;d3plot.dx&quot; is as follows:
+
+ object 1 class array type float rank 1 shape 3 items         162 lsb binary
+ data file d3plot,         260
+ attribute &quot;dep&quot; string &quot;positions&quot;
+ object 2 class array type int rank 1 shape 9 items          64 lsb binary
+ data file d3plot,        2204
+ attribute &quot;element type&quot; string &quot;cubes&quot;
+ attribute &quot;ref&quot; string &quot;positions&quot;
+ object 3 class array type float rank 0 items         162 lsb binary
+ data file d3plot,        4560
+ attribute &quot;dep&quot; string &quot;positions&quot;
+ object &quot;irreg positions irreg connections binary file&quot; class field
+ component &quot;positions&quot; value 1
+ component &quot;connections&quot; value 2
+ component &quot;data&quot; value 3
+ end
+
+(forgive the wierd spacing,  I have written a code to auto-generate the .dx
+file for d3plots with different sized meshes, and I haven't bothered to
+tweak the format statements yet)
+
+Can I get DX to number it's nodes from 1-162 instead of 0-161? If not, is
+there a way to get DX to subtract 1 from each of the numbers in the
+connectivity list?
+
+I am also open to other solutions.
+
+If anyone would like to try things out on my binary file (&quot;d3plot&quot;) ask me
+and I'll e-mail it to you, I would attach it to this e-mail, however, it is
+3.6 megabytes and I decided it would be poor form to send a large attachment
+to a list.
+
+Thank you very much
+
+-- 
+Mark Gesing,
+MASc. Candidate,
+Mechanical and Mechatronics Engineering,
+University of Waterloo
+<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">magesing at engmail.uwaterloo.ca</A>
+(519) 888-4567 x32309
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/opendx2-users/attachments/20080716/ae564a40/attachment.html">https://lists.berlios.de/pipermail/opendx2-users/attachments/20080716/ae564a40/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000025.html">[OpenDX2-users] Problems running DX version 4.4.4 in script mode
+</A></li>
+	<LI>Next message: <A HREF="000027.html">[OpenDX2-users] Can DX count from 1 instead of 0?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

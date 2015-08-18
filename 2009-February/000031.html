@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] Problem while Saving '*.net' files.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Problem%20while%20Saving%20%27%2A.net%27%20files.&In-Reply-To=%3C4990DDC6.8030506%40cmich.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] Problem while Saving '*.net' files.</H1>
+    <B>S&#233;bastien Le Roux</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Problem%20while%20Saving%20%27%2A.net%27%20files.&In-Reply-To=%3C4990DDC6.8030506%40cmich.edu%3E"
+       TITLE="[OpenDX2-users] Problem while Saving '*.net' files.">s.le-roux at cmich.edu
+       </A><BR>
+    <I>Tue Feb 10 02:52:06 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[OpenDX2-users] Hello all opendx user - a Fedora 10 issue	question
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello opendx users,
+Since upgrade to 4.4.4 version I have noticed something probably a bug 
+but I am not sure.
+Opening a visual program with control panel aspects set to dialogue 
+style and then
+saving this visual program with DX will reset the control panels to a 
+developer style  ...
+... doing nothing else than saving the program.
+I have checked both files '*.net'/'*.cfg' before and after saving the 
+only difference appears at the line
+describing the control panel ex:
+// panel[1]: position = (0.0958,0.0638), size = 0.2589x0.8505, startup = 
+1, devstyle = 0
+
+After saving with DX the file will be:
+// panel[1]: position = (0.0958,0.0638), size = 0.2589x0.8505, startup = 
+1, devstyle = 0, screen = 0
+
+where you can see that a 'screen = 0' instruction now appears as last 
+argument of the command.
+When deleting this 'screen = 0' instruction the control panels then get 
+back to the dialogue style.
+
+An idea about this ?
+Shall I report this as an OpenDX bug ?
+
+S&#233;bastien
+
+-- 
+====================================================
+Dr. S&#233;bastien Le Rouxe
+Department of Physics
+203 Dow Science
+Central Michigan University
+Mt. Pleasant, MI 48859, USA
+E-mail:  <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">s.le-roux at cmich.edu</A>
+Webpage: <A HREF="http://www.phy.cmich.edu/people/lerou1s/">http://www.phy.cmich.edu/people/lerou1s/</A>
+Fax:   +1 (989) 774 2697
+Phone: +1 (989) 774 3180
+====================================================
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[OpenDX2-users] Hello all opendx user - a Fedora 10 issue	question
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

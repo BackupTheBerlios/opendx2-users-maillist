@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] data import failure
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20data%20import%20failure&In-Reply-To=%3C298a6f61003011207g37f2c92la58b161f4f2c0ef5%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000050.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] data import failure</H1>
+    <B>e-letter</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20data%20import%20failure&In-Reply-To=%3C298a6f61003011207g37f2c92la58b161f4f2c0ef5%40mail.gmail.com%3E"
+       TITLE="[OpenDX2-users] data import failure">inpost at gmail.com
+       </A><BR>
+    <I>Mon Mar  1 21:07:31 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000050.html">[OpenDX2-users] data import failure
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Readers,
+
+A previous post is in the web forum but today I want to use the mailing list. :)
+
+I used the data prompter function to attempt to import data in csv
+format. The data set consists of three columns of data, to make a 3D
+plot. Import was achieved using the following configuration options in
+the 'data prompter' dialogue window:
+
+spreadsheet format file
+	data organisation: table
+	column delimiter: &quot;,&quot;
+	
+The command 'visualise data' produces a 'control panel' dialogue
+window with a 'comment' dialogue window, to advise that the columns in
+my imported data set can be associated, or mapped, to the 3D xyz
+co-ordinates.
+
+An 'error' dialogue window appears requesting the following tools to be defined:
+
+autoscale
+make3dfield
+unsquishglyph
+
+The 'visual program editor' dialogue window does not show these tools.
+Log file below:
+
+Starting DX executive
+Memory cache will use 774 MB (48 for small items, 726 for large)
+port = 1900
+server: accepted connection from client
+Begin Execution
+ 0:  worker here [5315]
+Object Description:
+Input object is a Field, the basic data carrying structure in DX.
+The Field contains nothing marked as data items.
+If the Field does contain data under another name, use the `Mark' module
+to select what should be used as data.
+The positions are enclosed within the box defined by the corner points:
+[ 0 0 0 ] and [ 111 0 0 ]
+Input is not ready to be rendered because the Field does not have colors yet.
+Use the `AutoColor', `AutoGreyScale', or `Color' modules to add colors.
+
+ECHO:
+Attempting to load undefined macro Make3DField from file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net while reading
+/path/to/tmpwLOgth.net
+Attempt to load Make3DField failed: Error opening file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net: No such file or
+directory
+Attempting to load undefined macro AutoScale from file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net while reading
+/path/to/tmpwLOgth.net
+Attempt to load AutoScale failed: Error opening file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net: No such file or
+directory
+Attempting to load undefined macro UnsquishGlyph from file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net while reading
+/path/to/tmpwLOgth.net
+Attempt to load UnsquishGlyph failed: Error opening file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net: No such file or
+directory
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  there are no columns of type string imported
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Attempting to load undefined macro Make3DField from file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net while reading
+/path/to/tmpYhTB7Q.net
+Attempt to load Make3DField failed: Error opening file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net: No such file or
+directory
+Attempting to load undefined macro AutoScale from file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net while reading
+/path/to/tmpYhTB7Q.net
+Attempt to load AutoScale failed: Error opening file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net: No such file or
+directory
+Attempting to load undefined macro UnsquishGlyph from file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net while reading
+/path/to/tmpYhTB7Q.net
+Attempt to load UnsquishGlyph failed: Error opening file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net: No such file or
+directory
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  there are no columns of type string imported
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+Attempting to load undefined macro Make3DField from file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net while reading
+/path/to/tmpgTMymb.net
+Attempt to load Make3DField failed: Error opening file
+/usr/lpp/dx/samples/macros/Make3DFieldMacro.net: No such file or
+directory
+Attempting to load undefined macro AutoScale from file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net while reading
+/path/to/tmpgTMymb.net
+Attempt to load AutoScale failed: Error opening file
+/usr/lpp/dx/samples/macros/AutoScaleMacro.net: No such file or
+directory
+Attempting to load undefined macro UnsquishGlyph from file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net while reading
+/path/to/tmpgTMymb.net
+Attempt to load UnsquishGlyph failed: Error opening file
+/usr/lpp/dx/samples/macros/UnsquishGlyphMacro.net: No such file or
+directory
+Begin Execution
+ERROR: AutoGlyph:  Missing data: data must be specified
+ 0:  WARNING:  there are no columns of type string imported
+ 0:  WARNING:  input is dimensionless and is not a 3D point; using
+default camera `to' point
+ERROR: Image: AutoAxes:  Bad parameter: bad input parameter (has no
+bounding box)
+
+Is this an installation problem? Can I get the missing tools
+separately? I installed originally using a mandriva repository.
+
+yours,
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx at conference.jabber.org</A>
+opendx444
+mandriva2008
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000050.html">[OpenDX2-users] data import failure
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

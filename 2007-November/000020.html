@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] how to import multiple data sets(object,	series..) from a single data file? which has diferent data points.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20how%20to%20import%20multiple%20data%20sets%28object%2C%0A%09series..%29%20from%20a%20single%20data%20file%3F%20which%20has%20diferent%20data%20points.&In-Reply-To=%3Cfba082560711060610i6a638ac7o904bdaedbb542372%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000021.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] how to import multiple data sets(object,	series..) from a single data file? which has diferent data points.</H1>
+    <B>T. H. Lin</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20how%20to%20import%20multiple%20data%20sets%28object%2C%0A%09series..%29%20from%20a%20single%20data%20file%3F%20which%20has%20diferent%20data%20points.&In-Reply-To=%3Cfba082560711060610i6a638ac7o904bdaedbb542372%40mail.gmail.com%3E"
+       TITLE="[OpenDX2-users] how to import multiple data sets(object,	series..) from a single data file? which has diferent data points.">easy.lin at gmail.com
+       </A><BR>
+    <I>Tue Nov  6 15:10:24 CET 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000021.html">[OpenDX2-users] how to import multiple data sets(object,	series..) from a single data file? which has diferent data points.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hi,
+
+I have a source data file in plain text.
+(scattered scalar data, with explicit position in 3d)
+
+#obj1 Total3
+x1, y1, z1, v1
+x2, y2, z2, v2
+x3, y3, z3, v3
+x4, y4, z4, v4
+#obj2 Total3
+x5, y5, z5, v5
+x6, y6, z6, v6
+#obj3 Total3
+x7, y7, z7, v7
+x8, y8, z8, v8
+x9, y9, z9, v9
+
+how to &quot;correctly&quot; import or describe it as a general file.
+I have tried to do like this,
+==================================
+file = file.dat
+points = 3   # here is the problem
+format = ascii
+interleaving = field
+header = lines 1
+series = 3, 1, 1, separator = marker &quot;Total3\n&quot;
+field = locations, field0
+structure = 3-vector, scalar
+type = float, float
+
+end
+==============================
+But the problem is that
+each data group has different &quot;points&quot;,
+(if I set a much bigger &quot;poins&quot; number, it can not be imported).
+
+how?
+thanks,
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/opendx2-users/attachments/20071106/39f811ac/attachment.html">https://lists.berlios.de/pipermail/opendx2-users/attachments/20071106/39f811ac/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000021.html">[OpenDX2-users] how to import multiple data sets(object,	series..) from a single data file? which has diferent data points.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#20">[ date ]</a>
+              <a href="thread.html#20">[ thread ]</a>
+              <a href="subject.html#20">[ subject ]</a>
+              <a href="author.html#20">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

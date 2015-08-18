@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] first try - opendx and plotting angular dependent	data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%20dependent%0A%09data&In-Reply-To=%3C4ADB2D09.4080408%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000037.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] first try - opendx and plotting angular dependent	data</H1>
+    <B>Lars O. Grobe</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%20dependent%0A%09data&In-Reply-To=%3C4ADB2D09.4080408%40gmx.net%3E"
+       TITLE="[OpenDX2-users] first try - opendx and plotting angular dependent	data">grobe at gmx.net
+       </A><BR>
+    <I>Sun Oct 18 16:58:17 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000037.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear all,
+
+this is my first mail to this list, and I am very much a beginner in 
+using opendx. I have been using gnuplot and other tools for a while to 
+plot results of measurements and simulations, and recently started to 
+investigate the possibilities of opendx when it comes to visualizing 
+time-stepped data and interpolation. I am an architect, and most of my 
+data is from measurements of radiation, light simulation, often with 
+positions given angular.
+
+Now my very first use of opendx is to be as follow:  I have a file 
+containing lots of data organized in three columns:
+
+theta phi intensity
+
+The data is completely scattered, so there is no rule like column or row 
+priority - the intensities are measured by a moving sensor which records 
+(angular) position and the signal.
+
+I want to create two plots, one for theta 0-90 and one for theta 90-180, 
+in both cases phi 0-360. The result should be something like a 
+equiangular projection, so it would be a disk with the radius being 
+dependant on theta. The intensity (data) should be plotted as the 
+z-value with a color map.
+
+What I did so far is:
+
+FileSelector
+
+Import
+
+Mark positions
+
+Include (I use [0,0] for min and [90.360] for max to get the first plot, 
+and [90,0] for min and [180.360] for the second
+
+Unmark
+
+Mark positions
+
+Compute (here I compute x,y from theta, phi)
+
+Unmark
+
+Connect
+
+Facenormals
+
+Rubbersheet
+
+Color
+
+Image
+
+(I also have a second path from the data after the Include-module to 
+create a colormap)
+
+My first question - is this correct so far? The result somehow looks 
+like what I expected though a bit spikey, but that MAY be because of my 
+data, What I would like to have now in a second step is
+
+a) I would like to scale the height of my z-values so that the maximum 
+becomes equal to the diameter of the disk
+b) I would like to find out how to smooth the z-values
+c) I would like to plot both, the theta 0-90 and 90-180, into two plots 
+in the same presentation. Is collect the way to do so, after 
+transforming the plots?
+
+After that, I would like to try an alternative way to plot the data, 
+this time for theta 0-180 in one. To do so, I would create a sphere with 
+the data value being used as radius. How can I get this? I would have to 
+access both position and data information from within one compute 
+module. I understand that I have two inputs, so I could connect the 
+first to the marked positions and the second to the unmarked data. The 
+positions would be a.0 (theta) and a.1(phi), but I could not get this 
+when I tried to refer to the second input as b.0 - what is wrong?
+
+I can post my net-file if wanted, I do not attach it now as I am not 
+sure about the policies for binary attachments for this list.
+
+Thank you, I hope this is not too much FAQ, regards
+
+Lars O. Grobe.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000037.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#36">[ date ]</a>
+              <a href="thread.html#36">[ thread ]</a>
+              <a href="subject.html#36">[ subject ]</a>
+              <a href="author.html#36">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

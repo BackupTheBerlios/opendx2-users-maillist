@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] X11 forwarding fails after network move
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20X11%20forwarding%20fails%20after%20network%20move&In-Reply-To=%3C4A6E52FA.9060007%40loni.ucla.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] X11 forwarding fails after network move</H1>
+    <B>Jonathan Pierce</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20X11%20forwarding%20fails%20after%20network%20move&In-Reply-To=%3C4A6E52FA.9060007%40loni.ucla.edu%3E"
+       TITLE="[OpenDX2-users] X11 forwarding fails after network move">jonathan.pierce at loni.ucla.edu
+       </A><BR>
+    <I>Tue Jul 28 03:23:06 CEST 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+I'm hoping this listserv still has some subscribers.  We recently moved 
+an old SGI workhorse server across networks. For whatever reason, dx is 
+the only application that refuses to automatically forward the 
+connection. 'ssh -X [host]' used to do the trick, and still does for 
+every other X11 application. 'dx,' however, throws this error (or 
+something similar, depending on the OS/X11 client):
+
+[jpierce@[host] bin_sgi]$ dx
+X11 connection rejected because of wrong authentication.
+X connection to localhost:23.0 broken (explicit kill or server shutdown).
+
+In order to get it working, one has to tunnel the X11 connection via the 
+DISPLAY environment variable. This is of limited success, though, as 
+some of our users aren't particularly *nix savvy, and others are 
+experiencing firewall issues on their external networks.
+
+Has anybody seen this behavior before? I've already checked for 
+references to the old IP in the usual spots.
+
+Thank you very much,
+Jonathan
+
+-- 
+Jonathan Pierce
+Systems Administrator
+Laboratory of Neuro Imaging, UCLA
+635 Charles E. Young Drive South,
+Suite 225 Los Angeles, CA 90095-7334
+Tel: 310.267.5076
+Fax: 310.206.5518
+<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">jonathan.pierce at loni.ucla.edu</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

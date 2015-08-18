@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] OpenDX development
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20development&In-Reply-To=%3C4AE10492.5090908%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000040.html">
+   <LINK REL="Next"  HREF="000042.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] OpenDX development</H1>
+    <B>Lars O. Grobe</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20development&In-Reply-To=%3C4AE10492.5090908%40gmx.net%3E"
+       TITLE="[OpenDX2-users] OpenDX development">grobe at gmx.net
+       </A><BR>
+    <I>Fri Oct 23 03:19:14 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000040.html">[OpenDX2-users] OpenDX development
+</A></li>
+        <LI>Next message: <A HREF="000042.html">[OpenDX2-users] OpenDX development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#41">[ date ]</a>
+              <a href="thread.html#41">[ thread ]</a>
+              <a href="subject.html#41">[ subject ]</a>
+              <a href="author.html#41">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Greg!
+&gt;<i> Anyone out there?   I'm wondering if anyone is interested in some work I've been doing on OpenDX - I've replaced the multi-process model with a multi-threaded one, enabling a much (much!) simplified memory manager.  This enables me to remove the limit on memory size (though I bet you'd better not allocate any individual object larger than 2GB).  It'll just consume virtual-memory page-space until it hits an arbitrary limit (suggestions?) when it will begin to flush the cache.  Fragmentation is also much less of a problem.  
+</I>&gt;<i>   
+</I>Sounds great. Just one thought - is it still possible to use the 
+multi-thread one, or did you really replace it? I am asking because I 
+remember when I was working on clusters, that for some solution process 
+migration works flawless, but process migration due to shared memory is 
+not implemented on some cluster platforms (that was the case for mosix 
+when I last used it).
+
+About the frequency of postings here, obviously most discussion moved to 
+the web-based forums. I also prefer mailing lists, but I am aware that 
+today web-forums are easier to find and use by many. Would be great to 
+link the mailing list and the forums, of course...
+
+Cheers, Lars.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000040.html">[OpenDX2-users] OpenDX development
+</A></li>
+	<LI>Next message: <A HREF="000042.html">[OpenDX2-users] OpenDX development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#41">[ date ]</a>
+              <a href="thread.html#41">[ thread ]</a>
+              <a href="subject.html#41">[ subject ]</a>
+              <a href="author.html#41">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

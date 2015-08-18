@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] OpenDX as benchmark
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20as%20benchmark&In-Reply-To=%3C1158248086.20017.59.camel%40cbienia%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] OpenDX as benchmark</H1>
+    <B>Christian Bienia</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20as%20benchmark&In-Reply-To=%3C1158248086.20017.59.camel%40cbienia%3E"
+       TITLE="[OpenDX2-users] OpenDX as benchmark">cbienia at CS.Princeton.EDU
+       </A><BR>
+    <I>Thu Sep 14 17:34:46 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[OpenDX2-users] OpenDX on Solaris SMP
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[OpenDX2-users] Make Label
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello David,
+
+thanks for your reply. Indeed, I haven't used the partitioner. I also
+have problems importing my data, the image I get doesn't make sense at
+all.
+
+I'm a student in the CS department of Princeton, and I'm working on a
+new benchmark suite for shared memory computers. I wanted to use OpenDX
+as one of the benchmark programs, but it proved to be difficult to set
+up and use. I'd appreciate if I could get some help.
+
+The benchmark should run approx. 20 seconds with a single CPU on a
+modern computer. The test data I wanted to use first is the head from
+the Siggraph Volume Visualization Data Sets:
+
+<A HREF="http://www.siggraph.org/education/materials/vol-viz/3dhead.zip">http://www.siggraph.org/education/materials/vol-viz/3dhead.zip</A>
+
+I've used the following (nonfunctional) OpenDX .general file to import
+my data:
+
+file = /home/cbienia/3dhead
+grid = 109 256 256
+format = msb ieee
+interleaving = field
+majority = column
+field = Density
+structure = scalar
+type = short
+dependency = positions
+positions = 0, 1, 0, 1, 0, 1
+end
+
+I'm also looking for a visual program that does the volume rendering in
+parallel. The one I wrote myself doesn't work at all. Does anybody have
+such a program available? I'd appreciate if I could get a copy.
+
+Thanks a lot for the help in advance!
+
+- Chris
+
+
+
+On Thu, 2006-09-14 at 00:19, David Thompson wrote:
+&gt;<i> Solaris should have automatic SMP capabilities. Have you used the 
+</I>&gt;<i> Partition module on your data?
+</I>&gt;<i> 
+</I>&gt;<i> David
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Hi,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;I have a quick question about the SMP capability of OpenDX. If I want to
+</I>&gt;<i> &gt;be able to use multiple threads, I have to compile Opendx with
+</I>&gt;<i> &gt;&quot;--enable-smp-linux&quot;. Does that literally mean only Linux? What about
+</I>&gt;<i> &gt;other Unixes which have pthread support?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;I'm trying to use more than one thread on a 8-way SMP machine with
+</I>&gt;<i> &gt;Solaris. I've started OpenDX with &quot;dx -processors 8&quot;, but when I start
+</I>&gt;<i> &gt;the computation prstat shows that dxexec doesn't use more than 12% of
+</I>&gt;<i> &gt;the resources (which is approx. 100% / 8).
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Could anybody clarify that?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;- Chris
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[OpenDX2-users] OpenDX on Solaris SMP
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[OpenDX2-users] Make Label
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

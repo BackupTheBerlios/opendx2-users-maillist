@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] Color/lighting surfaces using loops/faces
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Color/lighting%20surfaces%20using%20loops/faces&In-Reply-To=%3CA77CB3FBF95E6748BBB508BCD7989F6CA040A6%40FKIMLKI02.Enterprise.afmc.ds.af.mil%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] Color/lighting surfaces using loops/faces</H1>
+    <B>Bettencourt Matthew T Civ AFRL/DEHE</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Color/lighting%20surfaces%20using%20loops/faces&In-Reply-To=%3CA77CB3FBF95E6748BBB508BCD7989F6CA040A6%40FKIMLKI02.Enterprise.afmc.ds.af.mil%3E"
+       TITLE="[OpenDX2-users] Color/lighting surfaces using loops/faces">Matthew.Bettencourt at kirtland.af.mil
+       </A><BR>
+    <I>Fri Nov 17 19:35:11 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[OpenDX2-users] series into template - how to?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am trying to build a geometry with loops/faces and inputing the
+correct geometry is simple, I have noticed that the color of the face is
+a function of the shape.  Lets suppose I am trying to build a house out
+of a square and a triangle.  I create the .dx file (see below) and then
+I use the network
+
+ 
+
+Import-&gt;color(blue) -&gt;image 
+
+ 
+
+And I see that the triangle is a darker blue than the square.  I am
+guessing it is a lighting issue because if I rotate the image I see a
+more consistent blue, but what gives?  Since this is 2D the lighting
+should be the same. 
+
+ 
+
+Anyone have ideas?  
+
+Thanks
+
+Matt
+
+----- datafile follows ----
+
+ 
+
+object &quot;position list&quot; class array type float rank 1 shape 2 items 5
+
+data follows
+
+0 0
+
+1 0
+
+1 1
+
+0 1
+
+.5 1.24
+
+object &quot;edge list&quot; class array type int rank 0 items 7 data follows
+
+0 1 2 3
+
+2 4 3
+
+attribute &quot;ref&quot; string &quot;positions&quot;
+
+object &quot;loop list&quot; class array type int rank 0 items 2 data follows
+
+ 0 4
+
+attribute &quot;ref&quot; string &quot;edges&quot;
+
+object &quot;face list&quot; class array type int rank 0 items 2 data follows
+
+ 0 1
+
+attribute &quot;ref&quot; string &quot;loops&quot;
+
+object &quot;data&quot; class array type float rank 0 items 2 data follows
+
+  2.5 2.5
+
+attribute &quot;dep&quot; string &quot;faces&quot;
+
+object &quot;map with hole&quot; class field
+
+ component &quot;positions&quot; &quot;position list&quot;
+
+ component &quot;edges&quot; &quot;edge list&quot;
+
+ component &quot;loops&quot; &quot;loop list&quot;
+
+ component &quot;faces&quot; &quot;face list&quot;
+
+ component &quot;data&quot; &quot;data&quot;
+
+end
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/opendx2-users/attachments/20061117/4d829f26/attachment.html">https://lists.berlios.de/pipermail/opendx2-users/attachments/20061117/4d829f26/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[OpenDX2-users] series into template - how to?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

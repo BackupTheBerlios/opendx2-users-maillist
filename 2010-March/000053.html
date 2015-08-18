@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] data import failure
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20data%20import%20failure&In-Reply-To=%3C4B8E5B7D.9070100%40aero.polimi.it%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000052.html">
+   <LINK REL="Next"  HREF="000054.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] data import failure</H1>
+    <B>Marco Morandini</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20data%20import%20failure&In-Reply-To=%3C4B8E5B7D.9070100%40aero.polimi.it%3E"
+       TITLE="[OpenDX2-users] data import failure">morandini at aero.polimi.it
+       </A><BR>
+    <I>Wed Mar  3 13:52:13 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000052.html">[OpenDX2-users] data import failure
+</A></li>
+        <LI>Next message: <A HREF="000054.html">[OpenDX2-users] consider to close mailing list?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>
+</I>&gt;<i> I have realised that the graph is produced by is not visible in the
+</I>&gt;<i> image window. I use the 'options' menu to open the 'view control'
+</I>&gt;<i> dialogue window. Then I change the 'set view' function to 'diagonal'.
+</I>&gt;<i> After this I can see a graph.
+</I>
+Not sure to understand your question, but what about ctrl-F ?
+
+&gt;<i>
+</I>&gt;<i> I am seeking to create 3d graphs like gnuplot, e.g.
+</I>&gt;<i> <A HREF="http://gnuplot.sourceforge.net/demo_4.2/pm3d.html.">http://gnuplot.sourceforge.net/demo_4.2/pm3d.html.</A> Can someone suggest
+</I>&gt;<i> the parts of the documentation I should read?
+</I>&gt;<i>
+</I>
+It's hard to read the documentation at the very beginning.
+In any case, something like this should work:
+
+1) use &quot;construct&quot; to build a regular x,y,z mesh (qith only one z value)
+2) &quot;mark&quot; the position of the resulting field
+3) use &quot;compute&quot; on the marked filed in order to compute z
+4) &quot;replace&quot; the &quot;data&quot; of point 1) with the result of 3)
+5) &quot;rubbersheet&quot;
+6) &quot;image&quot;
+
+or
+
+3) &quot;compute&quot; a vector with your desired z:
+    for example, [a.0, a.1, sin(a.0)*sin(a.1)]
+4) &quot;replace&quot; the &quot;positions&quot; of point 1) with the &quot;data&quot;
+    field of point 3)
+5) &quot;show connections&quot;
+6) &quot;image&quot;
+
+then you can add contour, using position.z as data ...
+
+Marco
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000052.html">[OpenDX2-users] data import failure
+</A></li>
+	<LI>Next message: <A HREF="000054.html">[OpenDX2-users] consider to close mailing list?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

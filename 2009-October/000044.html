@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] OpenDX2-users Digest, Vol 20, Issue 4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX2-users%20Digest%2C%20Vol%2020%2C%20Issue%204&In-Reply-To=%3C4AE7088C.9090208%40geociencias.unam.mx%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000043.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] OpenDX2-users Digest, Vol 20, Issue 4</H1>
+    <B>Vlad Manea</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX2-users%20Digest%2C%20Vol%2020%2C%20Issue%204&In-Reply-To=%3C4AE7088C.9090208%40geociencias.unam.mx%3E"
+       TITLE="[OpenDX2-users] OpenDX2-users Digest, Vol 20, Issue 4">vlad at geociencias.unam.mx
+       </A><BR>
+    <I>Tue Oct 27 15:49:48 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000043.html">[OpenDX2-users] OpenDX development
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users-request at lists.berlios.de</A> escribi&#243;:
+&gt;<i> Send OpenDX2-users mailing list submissions to
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> To subscribe or unsubscribe via the World Wide Web, visit
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">https://lists.berlios.de/mailman/listinfo/opendx2-users</A>
+</I>&gt;<i> or, via email, send a message with subject or body 'help' to
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users-request at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> You can reach the person managing the list at
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users-owner at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> When replying, please edit your Subject line so it is more specific
+</I>&gt;<i> than &quot;Re: Contents of OpenDX2-users digest...&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Today's Topics:
+</I>&gt;<i>
+</I>&gt;<i>    1. Re: OpenDX development (Marco Morandini)
+</I>&gt;<i>    2. Re: OpenDX development (Greg Abram)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Mon, 26 Oct 2009 11:49:09 +0100
+</I>&gt;<i> From: Marco Morandini &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">morandini at aero.polimi.it</A>&gt;
+</I>&gt;<i> Subject: Re: [OpenDX2-users] OpenDX development
+</I>&gt;<i> To: Greg Abram &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">gda at tacc.utexas.edu</A>&gt;
+</I>&gt;<i> Cc: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">4AE57EA5.8080003 at aero.polimi.it</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+</I>&gt;<i>
+</I>&gt;<i> Greg Abram wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi -
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Anyone out there?   I'm wondering if anyone is interested in some
+</I>&gt;&gt;<i> work I've been doing on OpenDX - I've replaced the multi-process
+</I>&gt;&gt;<i> model with a multi-threaded one, enabling a much (much!) simplified
+</I>&gt;&gt;<i> memory manager.  This enables me to remove the limit on memory size
+</I>&gt;&gt;<i> (though I bet you'd better not allocate any individual object larger
+</I>&gt;&gt;<i> than 2GB).  It'll just consume virtual-memory page-space until it
+</I>&gt;&gt;<i> hits an arbitrary limit (suggestions?) when it will begin to flush
+</I>&gt;&gt;<i> the cache.  Fragmentation is also much less of a problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> It would be great if you could post the patches, so that they remain 
+</I>&gt;<i> archived somewhere, waiting for someone to re-vitalize the project.
+</I>&gt;<i> Do the multi-thread model rules out the possibility to use mpi?
+</I>&gt;<i>
+</I>&gt;<i> I'm also very interested in the cache bug you mentioned in the forum.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Marco
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Hi Greg,
+
+
+I have been using OpenDX for few years now to visualize 3D fluid 
+simulations and indeed this memory problem
+is very very annoying. I am very interested to give a try on what you 
+did. Please let us know when/where you
+decided to distribute it.
+
+Thanks a lot,
+
+Vlad
+&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 2
+</I>&gt;<i> Date: Mon, 26 Oct 2009 11:17:18 -0500
+</I>&gt;<i> From: Greg Abram &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">gda at tacc.utexas.edu</A>&gt;
+</I>&gt;<i> Subject: Re: [OpenDX2-users] OpenDX development
+</I>&gt;<i> To: Marco Morandini &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">morandini at aero.polimi.it</A>&gt;
+</I>&gt;<i> Cc: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> Message-ID:
+</I>&gt;<i> 	&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">0E07074B82CE4B4A9982802A8484B696861F2F8662 at EXCHANGE2K7.tacc.utexas.edu</A>&gt;
+</I>&gt;<i> 	
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;us-ascii&quot;
+</I>&gt;<i>
+</I>&gt;<i> Hi, Marco -
+</I>&gt;<i>
+</I>&gt;<i> I'll be distributing the code I've been working on - I just want to do a bit more testing.  I think I'll be using a SourceForge repository.
+</I>&gt;<i>
+</I>&gt;<i> The changes I've been making affect the standard shared-memory model of OpenDX.  The work I did a long time ago on an MPI-based distributed-memory version was built on top of the shared-memory model; whether that is multi-process or multi-thread should be immaterial.  However, I'm not sure I'm going to try to resurrect that stuff; it was only a prototype and never really became real.
+</I>&gt;<i>
+</I>&gt;<i> I don't believe the system has been flushing the cache at all, in the past.  Thats why it would run until it ran out of memory, take a few half-hearted efforts at scavenging, and then stop.  At which point you could explicitly flush the cache, and it'd proceed along just fine - until it ran out of memory again.   I have a test progeam that steps up and back through 1000 isovalues; the old code would not run very long before stopping with an out-of-memory error.   With the fix in, even in very constrained memory it keeps running a *long* time.
+</I>&gt;<i>
+</I>&gt;<i> Greg
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Gregory D. Abram
+</I>&gt;<i> Texas Advanced Computing Center
+</I>&gt;<i> JJ Pickle Research Campus - ROC 1.101 Bldg 196
+</I>&gt;<i> 10100 Burnet Road
+</I>&gt;<i> Austin, Texas 78758-4497
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">gda at tacc.utexas.edu</A>
+</I>&gt;<i> (512) 471-8196
+</I>&gt;<i> ________________________________________
+</I>&gt;<i> From: Marco Morandini [<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">morandini at aero.polimi.it</A>]
+</I>&gt;<i> Sent: Monday, October 26, 2009 5:49 AM
+</I>&gt;<i> To: Greg Abram
+</I>&gt;<i> Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>
+</I>&gt;<i> Subject: Re: [OpenDX2-users] OpenDX development
+</I>&gt;<i>
+</I>&gt;<i> Greg Abram wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi -
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Anyone out there?   I'm wondering if anyone is interested in some
+</I>&gt;&gt;<i> work I've been doing on OpenDX - I've replaced the multi-process
+</I>&gt;&gt;<i> model with a multi-threaded one, enabling a much (much!) simplified
+</I>&gt;&gt;<i> memory manager.  This enables me to remove the limit on memory size
+</I>&gt;&gt;<i> (though I bet you'd better not allocate any individual object larger
+</I>&gt;&gt;<i> than 2GB).  It'll just consume virtual-memory page-space until it
+</I>&gt;&gt;<i> hits an arbitrary limit (suggestions?) when it will begin to flush
+</I>&gt;&gt;<i> the cache.  Fragmentation is also much less of a problem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> It would be great if you could post the patches, so that they remain
+</I>&gt;<i> archived somewhere, waiting for someone to re-vitalize the project.
+</I>&gt;<i> Do the multi-thread model rules out the possibility to use mpi?
+</I>&gt;<i>
+</I>&gt;<i> I'm also very interested in the cache bug you mentioned in the forum.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> Marco
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> OpenDX2-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">OpenDX2-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">https://lists.berlios.de/mailman/listinfo/opendx2-users</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> End of OpenDX2-users Digest, Vol 20, Issue 4
+</I>&gt;<i> ********************************************
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/opendx2-users/attachments/20091027/0cc3a0af/attachment.html">https://lists.berlios.de/pipermail/opendx2-users/attachments/20091027/0cc3a0af/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000043.html">[OpenDX2-users] OpenDX development
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

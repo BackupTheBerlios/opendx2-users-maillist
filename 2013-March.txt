@@ -1,0 +1,93 @@
+From lyh03259.aps at gmail.com  Fri Mar 15 02:17:20 2013
+From: lyh03259.aps at gmail.com (Yonghui)
+Date: Thu, 14 Mar 2013 20:17:20 -0500
+Subject: [OpenDX2-users] About plotting geometry of a molecule for a DX
+	learner
+Message-ID: <003001ce211a$d95b7900$8c126b00$@gmail.com>
+
+Dear DX/DX2 users,
+
+ 
+
+I am learning OpenDX. I have a general understanding of DX and I can write a
+net file for plotting 3D isosurfaces, but I am not a pro.
+
+My question is:
+
+Giving a position file and a general file as a description, how can I plot a
+ball-stick structure for a molecule within the modules/macros provided by
+DX?
+
+For example:
+
+I have a geo.xyz file and a general file like these:
+
+-----------------------------------Geo.xyz----------------------------------
+---------
+
+46
+
+TDPP geo
+
+          C       -7.144175   -0.953942    0.162885
+
+          C       -5.848447   -1.408507   -0.116238
+
+          C       -4.862029   -0.424485   -0.265522
+
+.
+
+----------------------------------------------------------------------------
+---------------
+
+----------------------------------Geo.general-------------------------------
+-----------
+
+file = geo.xyz
+
+points = 46
+
+format = ascii
+
+interleaving = field
+
+header = lines 2
+
+field = field0, locations
+
+structure = string[15], 3-vector
+
+type = string, float
+
+ 
+
+end
+
+----------------------------------------------------------------------------
+----------------
+
+My net file looks like this: FileSelector->Import->AutoGlyph->Image. After
+executing, I got a picture with white letter on the right positions.
+
+But I am wondering how to make it a ball-Stick structure. To bring the
+problem down, there are three sub questions:
+
+1.       How can I tell DX to plot a sphere at the all the positions of
+carbon, and not simply write a "C" on the point?
+
+2.       How can I tell DX to calculate the distance between any two atoms?
+
+3.       For distances smaller than a specific number, how can I tell DX to
+connect the corresponding atoms with a line?
+
+Any suggestion will be appreciated. I just don't know which module should be
+used. And I think maybe a little hint will be great!
+
+Thanks.
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/opendx2-users/attachments/20130314/fe72101e/attachment.html>
+

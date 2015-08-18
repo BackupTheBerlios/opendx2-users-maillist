@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] OpenDX development
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20development&In-Reply-To=%3C0E07074B82CE4B4A9982802A8484B696861F2F8662%40EXCHANGE2K7.tacc.utexas.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000042.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] OpenDX development</H1>
+    <B>Greg Abram</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20OpenDX%20development&In-Reply-To=%3C0E07074B82CE4B4A9982802A8484B696861F2F8662%40EXCHANGE2K7.tacc.utexas.edu%3E"
+       TITLE="[OpenDX2-users] OpenDX development">gda at tacc.utexas.edu
+       </A><BR>
+    <I>Mon Oct 26 17:17:18 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000042.html">[OpenDX2-users] OpenDX development
+</A></li>
+        <LI>Next message: <A HREF="000044.html">[OpenDX2-users] OpenDX2-users Digest, Vol 20, Issue 4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, Marco -
+
+I'll be distributing the code I've been working on - I just want to do a bit more testing.  I think I'll be using a SourceForge repository.
+
+The changes I've been making affect the standard shared-memory model of OpenDX.  The work I did a long time ago on an MPI-based distributed-memory version was built on top of the shared-memory model; whether that is multi-process or multi-thread should be immaterial.  However, I'm not sure I'm going to try to resurrect that stuff; it was only a prototype and never really became real.
+
+I don't believe the system has been flushing the cache at all, in the past.  Thats why it would run until it ran out of memory, take a few half-hearted efforts at scavenging, and then stop.  At which point you could explicitly flush the cache, and it'd proceed along just fine - until it ran out of memory again.   I have a test progeam that steps up and back through 1000 isovalues; the old code would not run very long before stopping with an out-of-memory error.   With the fix in, even in very constrained memory it keeps running a *long* time.
+
+Greg
+
+
+Gregory D. Abram
+Texas Advanced Computing Center
+JJ Pickle Research Campus - ROC 1.101 Bldg 196
+10100 Burnet Road
+Austin, Texas 78758-4497
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">gda at tacc.utexas.edu</A>
+(512) 471-8196
+________________________________________
+From: Marco Morandini [<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">morandini at aero.polimi.it</A>]
+Sent: Monday, October 26, 2009 5:49 AM
+To: Greg Abram
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">opendx2-users at lists.berlios.de</A>
+Subject: Re: [OpenDX2-users] OpenDX development
+
+Greg Abram wrote:
+&gt;<i> Hi -
+</I>&gt;<i>
+</I>&gt;<i> Anyone out there?   I'm wondering if anyone is interested in some
+</I>&gt;<i> work I've been doing on OpenDX - I've replaced the multi-process
+</I>&gt;<i> model with a multi-threaded one, enabling a much (much!) simplified
+</I>&gt;<i> memory manager.  This enables me to remove the limit on memory size
+</I>&gt;<i> (though I bet you'd better not allocate any individual object larger
+</I>&gt;<i> than 2GB).  It'll just consume virtual-memory page-space until it
+</I>&gt;<i> hits an arbitrary limit (suggestions?) when it will begin to flush
+</I>&gt;<i> the cache.  Fragmentation is also much less of a problem.
+</I>&gt;<i>
+</I>
+It would be great if you could post the patches, so that they remain
+archived somewhere, waiting for someone to re-vitalize the project.
+Do the multi-thread model rules out the possibility to use mpi?
+
+I'm also very interested in the cache bug you mentioned in the forum.
+
+Thanks,
+
+Marco
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000042.html">[OpenDX2-users] OpenDX development
+</A></li>
+	<LI>Next message: <A HREF="000044.html">[OpenDX2-users] OpenDX2-users Digest, Vol 20, Issue 4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

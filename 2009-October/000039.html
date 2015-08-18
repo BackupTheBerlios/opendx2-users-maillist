@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] first try - opendx and plotting angular dependent data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%0A%20dependent%20data&In-Reply-To=%3C4ADC7A3D.2030302%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000038.html">
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] first try - opendx and plotting angular dependent data</H1>
+    <B>Lars O. Grobe</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20first%20try%20-%20opendx%20and%20plotting%20angular%0A%20dependent%20data&In-Reply-To=%3C4ADC7A3D.2030302%40gmx.net%3E"
+       TITLE="[OpenDX2-users] first try - opendx and plotting angular dependent data">grobe at gmx.net
+       </A><BR>
+    <I>Mon Oct 19 16:39:57 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000038.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+        <LI>Next message: <A HREF="000040.html">[OpenDX2-users] OpenDX development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Joel!
+&gt;<i> way already. You may be interested in the OpenDX forum at
+</I>&gt;<i> <A HREF="http://www.opendx.org/cgi-bin/forum/YaBB.pl">http://www.opendx.org/cgi-bin/forum/YaBB.pl</A>
+</I>&gt;<i> It gets more readers than the mailing list, I think.
+</I>&gt;<i>   
+</I>Unforunately yes, I prefer the mailing list comfort, but thank you for 
+the hint. Just got registred there.
+
+&gt;&gt;<i> I found that there is the Post module which is supposed to do some 
+</I>&gt;&gt;<i> interpolation. I just do not know how to use it - where in my net should 
+</I>&gt;&gt;<i> it appear, just after the Connect module?
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> I think you want Refine, not Post. And yes, after Connect should do it.
+</I>&gt;<i>   
+</I>Well, the problem is that connect gives my straight connections, so I 
+have a linear interpolation through all data points. I would like to use 
+something like a spline interpolation instead, which would lead to a 
+surface not going through all those points which are far off. As far as 
+I understand it, refine would only increase the number of points but 
+still make sure that any data point is touched by the surface, right?
+&gt;<i> The error message refers to the number of positions/data values, not to
+</I>&gt;<i> their dimensionality. Your original compute expression is probably
+</I>&gt;<i> correct (at least, it would not be the cause of that error message).
+</I>&gt;<i> The problem is upstream of Compute. Somehow, the number of positions
+</I>&gt;<i> received by Compute's a input is different from the number of data
+</I>&gt;<i> values received by the b input. (You didn't insert a Post, did you?)
+</I>&gt;<i>   
+</I>No, worse, there was an include-statement on the positions, but I had 
+connected the compute's second input directly to the input (in front of 
+the include), so it got the unfiltered data. Thank you for pointing me 
+the way, as I had completely misunderstood the meaning of the error message!
+
+I have got my sphere now after adding a second route behind my mark 
+module -&gt; include module through an unmark. So I get two data streams 
+from the include now, one is getting directly piped into the compute's 
+master input, while the second input's stream is first unmarked. This 
+gives me the positions as a.x and a.y and the data as b. Perfect!
+
+
+I have to figure out yet how to create a nice spherical surface with the 
+data values as delt-radius, so far I got only the showpositions to prove 
+that the coordinate computation works. I had hoped that rubbersheet 
+would do this, but it is only for flat carthesian positions and actually 
+translating the data value to a elevation is already done in my compute 
+now. So I guess I need a closer look at the isosurface module for what I 
+want to do...?
+
+Thank you for the comments! Also Giulio has been a great help (I was not 
+aware that my replys got addressed only to the private mail, but not the 
+list). I can say that DX is much more fun then I was hoping for so far...
+
+Cheers Lars.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000038.html">[OpenDX2-users] first try - opendx and plotting angular dependent data
+</A></li>
+	<LI>Next message: <A HREF="000040.html">[OpenDX2-users] OpenDX development
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] Reading interleaved data from a binary file using	DX native file
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Reading%20interleaved%20data%20from%20a%20binary%20file%20using%0A%09DX%20native%20file&In-Reply-To=%3C20081024143151.GA5092%40mechpc68.uwaterloo.ca%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] Reading interleaved data from a binary file using	DX native file</H1>
+    <B>Mark Gesing</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Reading%20interleaved%20data%20from%20a%20binary%20file%20using%0A%09DX%20native%20file&In-Reply-To=%3C20081024143151.GA5092%40mechpc68.uwaterloo.ca%3E"
+       TITLE="[OpenDX2-users] Reading interleaved data from a binary file using	DX native file">magesing at engmail.uwaterloo.ca
+       </A><BR>
+    <I>Fri Oct 24 16:31:51 CEST 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi everyone,
+
+I am trying to display some finite element results in OpenDX, and I have
+had some success parsing the nodal (position dependant) data. 
+
+However,
+when I try to import the elemental (connections dependant) data I run
+into some problems:
+
+In the binary file the element data is stored as follows for each
+element:
+ - float[6] representing the upper-triangle of a symmetric stress tensor
+ - float[3] representing the euler-angles 
+ - float[10] Other less-interesting element data
+ - float[6] representing the upper-triangle of a symmetric strain tensor
+
+The first problem I encounter, is if I am trying to import only the
+stress tensor (for example) how can I tell DX to read the 6*4 bytes
+representing the stress, then skip the 19*4 bytes of remaining
+connections-dependant data I'm not interested in?
+
+Second, How can I take the rank 1 shape 6 data of my stress components
+and turn it into rank 2 shape 3x3 data which autoglyph will understand
+as a symmetric tensor? The stress components are ordered  {xx, yy, zz,
+xy, yz, zx} in my file.
+
+If I import all of the connections data (25 floats, 25*4 bytes) to avoid
+my interleaving issues into a rank 1 shape 25 array, does an existing
+module exist to extract subsets of the array?
+
+Thank you in advance for your advice.
+
+Mark Gesing
+MASc. Candidate
+University of Waterloo
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>

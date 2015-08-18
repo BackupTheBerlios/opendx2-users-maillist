@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [OpenDX2-users] Can DX count from 1 instead of 0?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/opendx2-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Can%20DX%20count%20from%201%20instead%20of%200%3F&In-Reply-To=%3C487EA575.4000501%40informatics.jax.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000026.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[OpenDX2-users] Can DX count from 1 instead of 0?</H1>
+    <B>Joel Richardson</B> 
+    <A HREF="mailto:opendx2-users%40lists.berlios.de?Subject=Re%3A%20%5BOpenDX2-users%5D%20Can%20DX%20count%20from%201%20instead%20of%200%3F&In-Reply-To=%3C487EA575.4000501%40informatics.jax.org%3E"
+       TITLE="[OpenDX2-users] Can DX count from 1 instead of 0?">jer at informatics.jax.org
+       </A><BR>
+    <I>Thu Jul 17 03:50:45 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000026.html">[OpenDX2-users] Can DX count from 1 instead of 0?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27">[ date ]</a>
+              <a href="thread.html#27">[ thread ]</a>
+              <a href="subject.html#27">[ subject ]</a>
+              <a href="author.html#27">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Mark,
+
+OpenDX array indexing always starts at 0.  You can
+easily subtract 1 from all the index numbers in the
+connections component. To do that, you'll have to
+import that array as something other than the connections
+component (maybe as a separate object - put the field
+and the array in a group and import that). Then inside
+of dx, run the array through Compute(&quot;a-1&quot;) and then
+use Replace to put it back into the field as the connections
+component. You'll probably also have to set the &quot;ref&quot;
+and &quot;element type&quot; attributes after the Compute, using
+the Options module.
+
+Hope that helps.
+Cheers,
+Joel
+
+Mark Gesing wrote:
+&gt;<i> Hi,
+</I>&gt;<i> 
+</I>&gt;<i> I have some data which is on a grid of cube shaped volume elements.
+</I>&gt;<i> The grid is an 8x8 grid (64 elements), made-up of two layers of nodes 
+</I>&gt;<i> (9x9x2=162).
+</I>&gt;<i> 
+</I>&gt;<i> My problem is that DX by default numbers the nodes starting at 0-161, 
+</I>&gt;<i> whereas the application generating the data (LS-Dyna) numbers the nodes 
+</I>&gt;<i> 1-162.
+</I>&gt;<i> 
+</I>&gt;<i> Therefore when I try to import the data (following the example on page 
+</I>&gt;<i> 254 of the user's guide) I get the error:
+</I>&gt;<i> 
+</I>&gt;<i> Begin Execution
+</I>&gt;<i> ERROR: Import:  Invalid data: 573rd item in `connections' component 
+</I>&gt;<i> (162) is not between 0 and 161  / file 'd3plot.dx' line 14
+</I>&gt;<i> 
+</I>&gt;<i> My .dx file &quot;d3plot.dx&quot; is as follows:
+</I>&gt;<i> 
+</I>&gt;<i>  object 1 class array type float rank 1 shape 3 items         162 lsb binary
+</I>&gt;<i>  data file d3plot,         260
+</I>&gt;<i>  attribute &quot;dep&quot; string &quot;positions&quot;
+</I>&gt;<i>  object 2 class array type int rank 1 shape 9 items          64 lsb binary
+</I>&gt;<i>  data file d3plot,        2204
+</I>&gt;<i>  attribute &quot;element type&quot; string &quot;cubes&quot;
+</I>&gt;<i>  attribute &quot;ref&quot; string &quot;positions&quot;
+</I>&gt;<i>  object 3 class array type float rank 0 items         162 lsb binary
+</I>&gt;<i>  data file d3plot,        4560
+</I>&gt;<i>  attribute &quot;dep&quot; string &quot;positions&quot;
+</I>&gt;<i>  object &quot;irreg positions irreg connections binary file&quot; class field
+</I>&gt;<i>  component &quot;positions&quot; value 1
+</I>&gt;<i>  component &quot;connections&quot; value 2
+</I>&gt;<i>  component &quot;data&quot; value 3
+</I>&gt;<i>  end
+</I>&gt;<i> 
+</I>&gt;<i> (forgive the wierd spacing,  I have written a code to auto-generate the 
+</I>&gt;<i> .dx file for d3plots with different sized meshes, and I haven't bothered 
+</I>&gt;<i> to tweak the format statements yet)
+</I>&gt;<i> 
+</I>&gt;<i> Can I get DX to number it's nodes from 1-162 instead of 0-161? If not, 
+</I>&gt;<i> is there a way to get DX to subtract 1 from each of the numbers in the 
+</I>&gt;<i> connectivity list?
+</I>&gt;<i> 
+</I>&gt;<i> I am also open to other solutions.
+</I>&gt;<i> 
+</I>&gt;<i> If anyone would like to try things out on my binary file (&quot;d3plot&quot;) ask 
+</I>&gt;<i> me and I'll e-mail it to you, I would attach it to this e-mail, however, 
+</I>&gt;<i> it is 3.6 megabytes and I decided it would be poor form to send a large 
+</I>&gt;<i> attachment to a list.
+</I>&gt;<i> 
+</I>&gt;<i> Thank you very much
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> Mark Gesing,
+</I>&gt;<i> MASc. Candidate,
+</I>&gt;<i> Mechanical and Mechatronics Engineering,
+</I>&gt;<i> University of Waterloo
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">magesing at engmail.uwaterloo.ca</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">magesing at engmail.uwaterloo.ca</A>&gt;
+</I>&gt;<i> (519) 888-4567 x32309
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> OpenDX2-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">OpenDX2-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/opendx2-users">https://lists.berlios.de/mailman/listinfo/opendx2-users</A>
+</I>
+-- 
+
+===============================================================
+Joel Richardson, Ph.D.
+Sr. Research Scientist
+Mouse Genome Informatics
+The Jackson Laboratory   Phone: (207) 288-6435
+600 Main Street          Fax:   (207) 288-6132
+Bar Harbor, Maine 04609  URL:   www.informatics.jax.org
+===============================================================
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000026.html">[OpenDX2-users] Can DX count from 1 instead of 0?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#27">[ date ]</a>
+              <a href="thread.html#27">[ thread ]</a>
+              <a href="subject.html#27">[ subject ]</a>
+              <a href="author.html#27">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/opendx2-users">More information about the OpenDX2-users
+mailing list</a><br>
+</body></html>
